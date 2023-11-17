@@ -1,0 +1,19 @@
+#search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#search-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#submit-btn{
+    margin-top: 20px;
+    transform: scale(1.5);
+}

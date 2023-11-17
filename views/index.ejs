@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log ingestor</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <form method="POST" id="search-form" action="http://localhost:3000/">
+      <div id="search-container">
+        <textarea
+          name="textquery"
+          id="text-query"
+          placeholder="Write your search query here..."
+          autocomplete="off"
+          required
+          rows="10"
+          cols="70"
+        ></textarea>
+      </div>
+      <button type="submit" name="submit-btn" id="submit-btn">Search</button>
+    </form>
+
+    <% if (data && data.length > 0) { %>
+    <div id="result-container">
+      <h2><%= data.length %> Search Results: </h2>
+      <ul>
+        <% data.forEach((item, index) => { %>
+        <li>
+          <pre><%= JSON.stringify(item, null, 2) %></pre>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+    <% } else if (data && data.length === 0) { %>
+    <p>No results found.</p>
+    <% } %>
+  </body>
+</html>
